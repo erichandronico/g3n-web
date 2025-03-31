@@ -9,7 +9,7 @@ const Footer = () => {
             © {year} G3N Desarrollo e Innovación. Todos los derechos reservados.
           </p>
           <p>
-            Sitio desarrollado con ❤️ por el equipo de G3N.
+            Sitio desarrollado por el equipo de G3N.
           </p>
         </div>
       </footer>
