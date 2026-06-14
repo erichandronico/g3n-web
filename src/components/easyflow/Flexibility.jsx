@@ -1,0 +1,79 @@
+import Reveal from '../Reveal'
+
+const values = [
+  'Workflow configurable',
+  'Aprobadores por nivel',
+  'Reglas por área',
+  'Notificaciones automáticas',
+  '100% flexible',
+]
+
+const steps = [
+  { n: 'A', t: 'Defines tus pasos', s: 'Los que tu negocio necesita' },
+  { n: 'B', t: 'Asignas aprobadores', s: 'En el orden que tú decides' },
+  { n: 'C', t: 'Easy Flow lo orquesta', s: 'Notifica, avanza y registra solo' },
+]
+
+const Flexibility = () => {
+  return (
+    <section className="bg-paper py-28 text-ink-text md:py-32">
+      <div className="mx-auto grid max-w-[1180px] grid-cols-1 items-center gap-12 px-7 md:gap-16 lg:grid-cols-[1.05fr_0.95fr]">
+        <div>
+          <Reveal as="div" className="kicker !text-blue">
+            Hecho a la medida de tu empresa
+          </Reveal>
+          <Reveal
+            as="h2"
+            delay={1}
+            className="mt-4 font-display text-[clamp(1.7rem,4vw,2.9rem)] font-bold leading-[1.08]"
+          >
+            Tu flujo, <span className="grad-text-dark">a tu manera.</span>
+          </Reveal>
+          <Reveal as="p" delay={2} className="mt-5 max-w-[50ch] text-[1.12rem] text-ink-text-dim">
+            No hay dos empresas iguales, y Easy Flow lo sabe. El workflow se configura para cada
+            cliente: defines los pasos, los niveles de aprobación, quién participa y cómo se
+            notifica. La plataforma se adapta a tu operación —no al revés.
+          </Reveal>
+          <Reveal as="div" delay={2} className="mt-8 flex flex-wrap gap-3">
+            {values.map((v) => (
+              <span
+                key={v}
+                className="rounded-full border border-blue/20 bg-white px-5 py-3 font-display text-[1rem] font-medium text-ink-text shadow-[0_10px_30px_-22px_rgba(14,34,53,.5)]"
+              >
+                {v}
+              </span>
+            ))}
+          </Reveal>
+        </div>
+
+        <Reveal
+          delay={2}
+          className="rounded-[26px] border border-blue/[0.18] p-7 shadow-soft md:p-9 [background:linear-gradient(160deg,rgba(28,111,168,.1),rgba(45,212,191,.04))]"
+        >
+          <div className="grid gap-3.5">
+            {steps.map((step, i) => (
+              <div key={step.n}>
+                <div className="flex items-center gap-4 rounded-2xl border border-ink-text/[0.08] bg-white px-4 py-4">
+                  <span className="grid h-[34px] w-[34px] flex-none place-items-center rounded-full font-display text-[0.92rem] font-bold text-ink-deep [background:var(--grad-bright)]">
+                    {step.n}
+                  </span>
+                  <span className="font-display text-[0.98rem] font-medium text-ink-text">
+                    {step.t}
+                    <span className="block font-sans text-[0.82rem] font-normal text-ink-text-dim">
+                      {step.s}
+                    </span>
+                  </span>
+                </div>
+                {i < steps.length - 1 && (
+                  <div className="ml-[33px] h-3.5 w-0.5 [background:linear-gradient(var(--teal),transparent)]" />
+                )}
+              </div>
+            ))}
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  )
+}
+
+export default Flexibility

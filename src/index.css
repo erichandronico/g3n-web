@@ -2,63 +2,179 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 221.2 83.2% 53.3%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 221.2 83.2% 53.3%;
-    --radius: 0.5rem;
-  }
+/* ============================================================
+   G3N · Easy Flow — Sistema de diseño 2026
+   Tokens de marca: navy #16314F → azul #1C6FA8 → teal #2DD4BF
+   ============================================================ */
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 217.2 91.2% 59.8%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 224.3 76.3% 48%;
-  }
+:root {
+  --ink: #0a1c2e;
+  --ink-deep: #081523;
+  --navy: #16314f;
+  --blue: #1c6fa8;
+  --teal: #2dd4bf;
+  --teal-bright: #39e0cb;
+  --teal-light: #6ff0dd;
+  --paper: #f6fafb;
+  --line: rgba(45, 212, 191, 0.16);
+  --text: #e8f1f7;
+  --text-dim: #9fb6c9;
+  --ink-text: #0e2235;
+  --ink-text-dim: #5a7488;
+  --grad: linear-gradient(118deg, #16314f 0%, #1c6fa8 46%, #2dd4bf 100%);
+  --grad-bright: linear-gradient(118deg, #2c7cb8 0%, #2dd4bf 60%, #6ff0dd 100%);
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 @layer base {
-  * {
-    border-color: hsl(var(--border));
+  html {
+    scroll-behavior: smooth;
   }
   body {
-    background-color: hsl(var(--background));
-    color: hsl(var(--foreground));
+    font-family: 'Figtree', system-ui, sans-serif;
+    background: var(--ink);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    font-weight: 700;
+  }
+  ::selection {
+    background: var(--teal);
+    color: var(--ink-deep);
   }
 }
 
-html {
-  scroll-behavior: smooth;
+@layer components {
+  /* ----- Texto con gradiente ----- */
+  .grad-text {
+    background: var(--grad-bright);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .grad-text-dark {
+    background: var(--grad);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* ----- Eyebrow / kicker ----- */
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--teal-light);
+    border: 1px solid var(--line);
+    background: rgba(45, 212, 191, 0.06);
+    padding: 8px 16px;
+    border-radius: 100px;
+  }
+  .eyebrow .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--teal);
+    box-shadow: 0 0 12px var(--teal);
+  }
+  .kicker {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 0.82rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--teal);
+  }
+
+  /* ----- Botones ----- */
+  .btn {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 100px;
+    padding: 15px 30px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition:
+      transform 0.3s var(--ease),
+      box-shadow 0.3s var(--ease),
+      background 0.3s var(--ease),
+      border-color 0.3s var(--ease),
+      color 0.3s var(--ease);
+  }
+  .btn-primary {
+    background: var(--grad-bright);
+    color: var(--ink-deep);
+    box-shadow: 0 14px 36px -12px rgba(45, 212, 191, 0.7);
+  }
+  .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 22px 48px -12px rgba(45, 212, 191, 0.85);
+  }
+  .btn-ghost {
+    color: var(--text);
+    border: 1px solid rgba(232, 241, 247, 0.18);
+  }
+  .btn-ghost:hover {
+    border-color: var(--teal);
+    color: var(--teal-light);
+    transform: translateY(-3px);
+  }
+
+  /* ----- Líneas de flujo del hero ----- */
+  .fline {
+    stroke-dasharray: 6 14;
+    animation: dash 9s linear infinite;
+    animation-delay: var(--o, 0s);
+  }
+}
+
+@layer utilities {
+  /* ----- Reveal on scroll (estilo Apple) ----- */
+  .reveal {
+    opacity: 0;
+    transform: translateY(34px);
+    transition:
+      opacity 0.9s var(--ease),
+      transform 0.9s var(--ease);
+  }
+  .reveal.is-in {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none;
+  }
+  .fline,
+  .animate-float,
+  .animate-float-slow,
+  .animate-iso-float,
+  .animate-iso-glow,
+  .animate-cue,
+  .animate-dash,
+  .animate-sheen {
+    animation: none !important;
+  }
 }
