@@ -1,6 +1,6 @@
 import logoG from '../assets/logo_solo_76x90.png'
 
-const Footer = ({ demoUrl }) => {
+const Footer = ({ onContact }) => {
   const year = new Date().getFullYear()
 
   return (
@@ -22,14 +22,12 @@ const Footer = ({ demoUrl }) => {
             Fluye sin límites. Optimiza todo.
           </div>
 
-          <a
-            href={demoUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={onContact}
             className="font-display text-[0.9rem] font-semibold text-teal-light transition-colors hover:text-white"
           >
             Solicita una demo →
-          </a>
+          </button>
         </div>
 
         <div className="mt-10 flex flex-col gap-2 border-t border-white/5 pt-6 text-[0.82rem] text-text-dim md:flex-row md:items-center md:justify-between">

@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import WhatIs from './components/easyflow/WhatIs'
@@ -9,18 +10,17 @@ import Platform from './components/easyflow/Platform'
 import About from './components/About'
 import CTA from './components/CTA'
 import Footer from './components/Footer'
+import ContactModal from './components/ContactModal'
 
 function App() {
-  const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER
-  const demoMessage = encodeURIComponent(
-    'Hola G3N 👋, quiero una demo de Easy Flow para mi empresa.',
-  )
-  const demoUrl = `https://wa.me/${whatsappNumber}?text=${demoMessage}`
+  const [contactOpen, setContactOpen] = useState(false)
+  const openContact = () => setContactOpen(true)
+  const closeContact = () => setContactOpen(false)
 
   return (
     <div className="bg-ink font-sans text-text antialiased">
-      <Navbar demoUrl={demoUrl} />
-      <Hero demoUrl={demoUrl} />
+      <Navbar onContact={openContact} />
+      <Hero onContact={openContact} />
       <WhatIs />
       <FlowGuides />
       <TaglineStrip />
@@ -28,8 +28,9 @@ function App() {
       <Flexibility />
       <Platform />
       <About />
-      <CTA demoUrl={demoUrl} />
-      <Footer demoUrl={demoUrl} />
+      <CTA onContact={openContact} />
+      <Footer onContact={openContact} />
+      <ContactModal open={contactOpen} onClose={closeContact} />
     </div>
   )
 }

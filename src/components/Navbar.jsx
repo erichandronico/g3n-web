@@ -26,7 +26,7 @@ const Wordmark = () => (
   </a>
 )
 
-const Navbar = ({ demoUrl }) => {
+const Navbar = ({ onContact }) => {
   const [solid, setSolid] = useState(false)
   const [open, setOpen] = useState(false)
 
@@ -61,14 +61,12 @@ const Navbar = ({ demoUrl }) => {
         </div>
 
         <div className="flex items-center gap-3">
-          <a
-            href={demoUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={onContact}
             className="hidden rounded-full bg-[linear-gradient(118deg,#2C7CB8_0%,#2DD4BF_60%,#6FF0DD_100%)] px-[22px] py-[11px] font-display text-[0.92rem] font-semibold text-ink-deep shadow-[0_10px_28px_-10px_rgba(45,212,191,.6)] transition-transform duration-300 hover:-translate-y-0.5 sm:inline-block"
           >
             Solicita una demo
-          </a>
+          </button>
           <button
             onClick={() => setOpen((v) => !v)}
             className="text-white md:hidden"
@@ -91,14 +89,15 @@ const Navbar = ({ demoUrl }) => {
               {l.label}
             </a>
           ))}
-          <a
-            href={demoUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-2 block rounded-full bg-[linear-gradient(118deg,#2C7CB8_0%,#2DD4BF_60%,#6FF0DD_100%)] px-5 py-3 text-center font-display font-semibold text-ink-deep"
+          <button
+            onClick={() => {
+              setOpen(false)
+              onContact()
+            }}
+            className="mt-2 block w-full rounded-full bg-[linear-gradient(118deg,#2C7CB8_0%,#2DD4BF_60%,#6FF0DD_100%)] px-5 py-3 text-center font-display font-semibold text-ink-deep"
           >
             Solicita una demo
-          </a>
+          </button>
         </div>
       )}
     </header>

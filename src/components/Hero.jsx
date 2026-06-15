@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import easyflowIso from '../assets/easyflow-iso.png'
 
-const Hero = ({ demoUrl }) => {
+const Hero = ({ onContact }) => {
   const [mounted, setMounted] = useState(false)
   const [scrollY, setScrollY] = useState(0)
 
@@ -130,9 +130,9 @@ const Hero = ({ demoUrl }) => {
         </p>
 
         <div className="mt-10 flex flex-wrap gap-4" style={up(0.95)}>
-          <a href={demoUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+          <button onClick={onContact} className="btn btn-primary">
             Solicita una demo
-          </a>
+          </button>
           <a href="#modulos" className="btn btn-ghost">
             Conoce los módulos
           </a>

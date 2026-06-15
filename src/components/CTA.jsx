@@ -1,7 +1,7 @@
 import easyflowIso from '../assets/easyflow-iso.png'
 import Reveal from './Reveal'
 
-const CTA = ({ demoUrl }) => {
+const CTA = ({ onContact }) => {
   return (
     <section
       id="contacto"
@@ -35,9 +35,9 @@ const CTA = ({ demoUrl }) => {
           solo flujo, configurado a la medida de tu operación.
         </Reveal>
         <Reveal as="div" delay={3} className="mt-10">
-          <a href={demoUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
-            Solicita una demo por WhatsApp
-          </a>
+          <button onClick={onContact} className="btn btn-primary">
+            Solicita una demo
+          </button>
         </Reveal>
       </div>
     </section>
