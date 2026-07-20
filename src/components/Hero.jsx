@@ -30,16 +30,12 @@ const Hero = ({ onContact }) => {
       className="relative flex min-h-screen items-center overflow-hidden"
       style={{
         background:
-          'radial-gradient(120% 90% at 80% -10%, #15466b 0%, var(--ink) 42%, var(--ink-deep) 100%)',
+          'radial-gradient(120% 90% at 80% -10%, rgba(13,148,136,.07) 0%, #ffffff 48%, var(--paper) 100%)',
       }}
     >
-      {/* Glows flotantes */}
-      <div className="pointer-events-none absolute -right-32 -top-40 h-[560px] w-[560px] animate-float rounded-full opacity-50 blur-[80px] [background:radial-gradient(circle,#2DD4BF,transparent_65%)]" />
-      <div className="pointer-events-none absolute -bottom-52 -left-36 h-[520px] w-[520px] animate-float-slow rounded-full opacity-50 blur-[80px] [background:radial-gradient(circle,#1C6FA8,transparent_65%)]" />
-
       {/* Líneas de flujo animadas */}
       <svg
-        className="pointer-events-none absolute inset-0 h-full w-full opacity-50"
+        className="pointer-events-none absolute inset-0 h-full w-full opacity-25"
         viewBox="0 0 1440 900"
         preserveAspectRatio="xMidYMid slice"
         aria-hidden="true"
@@ -47,8 +43,8 @@ const Hero = ({ onContact }) => {
         <defs>
           <linearGradient id="fl" x1="0" x2="1">
             <stop offset="0" stopColor="#1C6FA8" stopOpacity="0" />
-            <stop offset=".5" stopColor="#2DD4BF" />
-            <stop offset="1" stopColor="#6FF0DD" stopOpacity="0" />
+            <stop offset=".5" stopColor="#0D9488" />
+            <stop offset="1" stopColor="#0D9488" stopOpacity="0" />
           </linearGradient>
         </defs>
         <path
@@ -91,18 +87,15 @@ const Hero = ({ onContact }) => {
             transformOrigin: 'left center',
           }}
         >
-          <span className="relative inline-block">
-            <span className="pointer-events-none absolute -inset-x-[20%] -inset-y-[30%] -z-10 animate-iso-glow rounded-full [background:radial-gradient(circle,rgba(45,212,191,.55),transparent_62%)] blur-[26px]" />
-            <img
-              src={easyflowIso}
-              width={120}
-              height={54}
-              alt="Easy Flow"
-              className="block h-auto w-[78px] animate-iso-float drop-shadow-[0_14px_40px_rgba(45,212,191,.35)] md:w-[96px]"
-            />
-          </span>
+          <img
+            src={easyflowIso}
+            width={120}
+            height={54}
+            alt="Easy Flow"
+            className="block h-auto w-[78px] animate-iso-float drop-shadow-[0_12px_28px_rgba(14,34,53,.18)] md:w-[96px]"
+          />
           <span className="font-display text-[clamp(1.9rem,5vw,3rem)] font-extrabold tracking-tight">
-            <span className="text-white">Easy</span> <span className="grad-text">Flow</span>
+            <span className="text-navy">Easy</span> <span className="text-teal">Flow</span>
           </span>
         </div>
 
@@ -112,11 +105,11 @@ const Hero = ({ onContact }) => {
         </div>
 
         <h1
-          className="max-w-[16ch] font-display text-[clamp(2.7rem,7vw,5.4rem)] font-extrabold"
+          className="max-w-[16ch] font-display text-[clamp(2.7rem,7vw,5.4rem)] font-extrabold text-navy"
           style={up(0.6)}
         >
           Fluye sin límites.
-          <span className="block grad-text">Optimiza todo.</span>
+          <span className="block text-teal">Optimiza todo.</span>
         </h1>
 
         <p

@@ -2,18 +2,18 @@ import Reveal from '../Reveal'
 
 const WhatIs = () => {
   return (
-    <section id="easyflow" className="bg-paper py-28 text-ink-text md:py-32">
+    <section id="easyflow" className="bg-white py-28 text-ink-text md:py-32">
       <div className="mx-auto max-w-[1180px] px-7">
-        <Reveal as="div" className="kicker !text-blue">
+        <Reveal as="div" className="kicker">
           ¿Qué es Easy Flow?
         </Reveal>
         <Reveal
           as="p"
           delay={1}
-          className="mt-5 max-w-[30ch] font-display text-[clamp(1.7rem,4.2vw,3rem)] font-semibold leading-[1.18] tracking-[-0.02em]"
+          className="mt-5 max-w-[30ch] font-display text-[clamp(1.7rem,4.2vw,3rem)] font-semibold leading-[1.18] tracking-[-0.02em] text-navy"
         >
           El sistema que pone a trabajar juntos{' '}
-          <span className="grad-text-dark">tus procesos, tus personas y tus datos</span> —sin
+          <span className="text-teal">tus procesos, tus personas y tus datos</span> —sin
           fricción.
         </Reveal>
         <Reveal

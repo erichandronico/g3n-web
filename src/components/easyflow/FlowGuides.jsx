@@ -39,9 +39,9 @@ const FlowGuides = () => {
           <Reveal
             as="h2"
             delay={1}
-            className="mt-4 max-w-[14ch] font-display text-[clamp(1.7rem,4vw,2.9rem)] font-bold leading-[1.08]"
+            className="mt-4 max-w-[14ch] font-display text-[clamp(1.7rem,4vw,2.9rem)] font-bold leading-[1.08] text-navy"
           >
-            Un proceso que <span className="grad-text">no se aprende</span> —se sigue.
+            Un proceso que <span className="text-teal">no se aprende</span> —se sigue.
           </Reveal>
           <Reveal as="p" delay={2} className="mt-5 max-w-[48ch] text-[1.1rem] text-text-dim">
             Easy Flow no obliga a tu equipo a memorizar pantallas ni manuales. La plataforma lleva a
@@ -67,23 +67,22 @@ const FlowGuides = () => {
         {/* Tarjeta de flujo */}
         <Reveal
           delay={2}
-          className="relative overflow-hidden rounded-[26px] border border-teal/15 p-7 shadow-soft md:p-9 [background:linear-gradient(160deg,rgba(28,111,168,.18),rgba(45,212,191,.06))]"
+          className="relative overflow-hidden rounded-[26px] border border-navy/10 bg-white p-7 shadow-soft md:p-9"
         >
-          <div className="pointer-events-none absolute inset-0 [background:radial-gradient(120%_80%_at_100%_0,rgba(45,212,191,.22),transparent_60%)]" />
           <div className="relative grid gap-3.5">
             {steps.map((step, i) => (
               <div key={step.n}>
-                <div className="flex items-center gap-4 rounded-2xl border border-teal/10 bg-ink-deep/50 px-4 py-4">
-                  <span className="grid h-[34px] w-[34px] flex-none place-items-center rounded-full font-display text-[0.92rem] font-bold text-ink-deep [background:var(--grad-bright)]">
+                <div className="flex items-center gap-4 rounded-2xl border border-navy/[0.08] bg-paper px-4 py-4">
+                  <span className="grid h-[34px] w-[34px] flex-none place-items-center rounded-full bg-teal font-display text-[0.92rem] font-bold text-white">
                     {step.n}
                   </span>
-                  <span className="font-display text-[0.98rem] font-medium">
+                  <span className="font-display text-[0.98rem] font-medium text-text">
                     {step.t}
                     <span className="block font-sans text-[0.82rem] font-normal text-text-dim">
                       {step.s}
                     </span>
                   </span>
-                  <span className="ml-auto rounded-full border border-teal/15 bg-teal/10 px-2.5 py-[5px] font-display text-[0.7rem] font-semibold uppercase tracking-[0.08em] text-teal-light">
+                  <span className="ml-auto rounded-full border border-teal/20 bg-teal/10 px-2.5 py-[5px] font-display text-[0.7rem] font-semibold uppercase tracking-[0.08em] text-teal">
                     {step.badge}
                   </span>
                 </div>

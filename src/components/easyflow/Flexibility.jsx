@@ -19,15 +19,15 @@ const Flexibility = () => {
     <section className="bg-paper py-28 text-ink-text md:py-32">
       <div className="mx-auto grid max-w-[1180px] grid-cols-1 items-center gap-12 px-7 md:gap-16 lg:grid-cols-[1.05fr_0.95fr]">
         <div>
-          <Reveal as="div" className="kicker !text-blue">
+          <Reveal as="div" className="kicker">
             Hecho a la medida de tu empresa
           </Reveal>
           <Reveal
             as="h2"
             delay={1}
-            className="mt-4 font-display text-[clamp(1.7rem,4vw,2.9rem)] font-bold leading-[1.08]"
+            className="mt-4 font-display text-[clamp(1.7rem,4vw,2.9rem)] font-bold leading-[1.08] text-navy"
           >
-            Tu flujo, <span className="grad-text-dark">a tu manera.</span>
+            Tu flujo, <span className="text-teal">a tu manera.</span>
           </Reveal>
           <Reveal as="p" delay={2} className="mt-5 max-w-[50ch] text-[1.12rem] text-ink-text-dim">
             No hay dos empresas iguales, y Easy Flow lo sabe. El workflow se configura para cada
@@ -38,7 +38,7 @@ const Flexibility = () => {
             {values.map((v) => (
               <span
                 key={v}
-                className="rounded-full border border-blue/20 bg-white px-5 py-3 font-display text-[1rem] font-medium text-ink-text shadow-[0_10px_30px_-22px_rgba(14,34,53,.5)]"
+                className="rounded-full border border-navy/15 bg-white px-5 py-3 font-display text-[1rem] font-medium text-ink-text shadow-[0_10px_30px_-22px_rgba(14,34,53,.35)]"
               >
                 {v}
               </span>
@@ -48,13 +48,13 @@ const Flexibility = () => {
 
         <Reveal
           delay={2}
-          className="rounded-[26px] border border-blue/[0.18] p-7 shadow-soft md:p-9 [background:linear-gradient(160deg,rgba(28,111,168,.1),rgba(45,212,191,.04))]"
+          className="rounded-[26px] border border-navy/10 bg-white p-7 shadow-soft md:p-9"
         >
           <div className="grid gap-3.5">
             {steps.map((step, i) => (
               <div key={step.n}>
-                <div className="flex items-center gap-4 rounded-2xl border border-ink-text/[0.08] bg-white px-4 py-4">
-                  <span className="grid h-[34px] w-[34px] flex-none place-items-center rounded-full font-display text-[0.92rem] font-bold text-ink-deep [background:var(--grad-bright)]">
+                <div className="flex items-center gap-4 rounded-2xl border border-navy/[0.08] bg-paper px-4 py-4">
+                  <span className="grid h-[34px] w-[34px] flex-none place-items-center rounded-full bg-teal font-display text-[0.92rem] font-bold text-white">
                     {step.n}
                   </span>
                   <span className="font-display text-[0.98rem] font-medium text-ink-text">
