@@ -29,8 +29,8 @@ const chips = [
 
 const Platform = () => {
   return (
-    <section className="bg-white py-28 text-ink-text md:py-32">
-      <div className="mx-auto max-w-[1180px] px-7">
+    <section className="tile-wrap text-ink-text">
+      <div className="tile">
         <Reveal as="div" className="kicker">
           Tecnología que no te preocupa
         </Reveal>
@@ -52,7 +52,7 @@ const Platform = () => {
             <Reveal
               key={f.title}
               delay={i + 1}
-              className="rounded-brand border border-navy/10 bg-paper p-8 shadow-[0_24px_50px_-34px_rgba(14,34,53,.18)] transition-transform duration-500 hover:-translate-y-1.5"
+              className="rounded-brand border border-navy/10 bg-paper p-8 transition-transform duration-500 hover:-translate-y-1.5"
             >
               <div className="mb-5 grid h-[50px] w-[50px] place-items-center rounded-[14px] bg-navy">
                 <f.icon className="h-6 w-6 text-white" strokeWidth={1.8} />

@@ -18,7 +18,7 @@ function App() {
   const closeContact = () => setContactOpen(false)
 
   return (
-    <div className="bg-paper font-sans text-text antialiased">
+    <div className="bg-paper-2 font-sans text-text antialiased">
       <Navbar onContact={openContact} />
       <Hero onContact={openContact} />
       <WhatIs />

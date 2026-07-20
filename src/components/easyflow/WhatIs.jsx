@@ -2,8 +2,8 @@ import Reveal from '../Reveal'
 
 const WhatIs = () => {
   return (
-    <section id="easyflow" className="bg-white py-28 text-ink-text md:py-32">
-      <div className="mx-auto max-w-[1180px] px-7">
+    <section id="easyflow" className="tile-wrap text-ink-text">
+      <div className="tile">
         <Reveal as="div" className="kicker">
           ¿Qué es Easy Flow?
         </Reveal>

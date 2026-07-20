@@ -16,6 +16,7 @@
   --teal-dark: #0b7a6e;
   --teal-soft: #5eead4;
   --paper: #f6fafb;
+  --paper-2: #ecf3f5;
   --line: rgba(22, 49, 79, 0.1);
   --text: #0e2235;
   --text-dim: #5a7488;
@@ -28,7 +29,7 @@
   }
   body {
     font-family: 'Figtree', system-ui, sans-serif;
-    background: var(--paper);
+    background: var(--paper-2);
     color: var(--text);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
@@ -118,6 +119,43 @@
     border-color: var(--teal);
     color: var(--teal-dark);
     transform: translateY(-3px);
+  }
+  /* Botón para secciones navy: acento claro sólido */
+  .btn-on-dark {
+    background: var(--teal-soft);
+    color: var(--navy);
+    box-shadow: 0 12px 28px -14px rgba(0, 0, 0, 0.45);
+  }
+  .btn-on-dark:hover {
+    background: #fff;
+    transform: translateY(-3px);
+  }
+
+  /* ----- Tiles estilo Apple: paneles redondeados apilados ----- */
+  .tile-wrap {
+    padding: 20px 16px 0;
+  }
+  @media (min-width: 640px) {
+    .tile-wrap {
+      padding: 24px 24px 0;
+    }
+  }
+  .tile {
+    margin-inline: auto;
+    max-width: 1320px;
+    border-radius: 28px;
+    background: #fff;
+    padding: 88px 28px;
+  }
+  @media (min-width: 768px) {
+    .tile {
+      border-radius: 40px;
+      padding: 110px 56px;
+    }
+  }
+  .tile-dark {
+    background: var(--navy);
+    color: #fff;
   }
 
   /* ----- Líneas de flujo del hero ----- */

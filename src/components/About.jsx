@@ -52,8 +52,8 @@ const services = [
 
 const About = () => {
   return (
-    <section id="nosotros" className="relative overflow-hidden py-28 md:py-32">
-      <div className="relative mx-auto max-w-[1180px] px-7">
+    <section id="nosotros" className="tile-wrap">
+      <div className="tile relative overflow-hidden">
         {/* Intro */}
         <Reveal as="div" className="kicker">
           Detrás de Easy Flow
@@ -89,7 +89,7 @@ const About = () => {
             <Reveal
               key={b.title}
               delay={i + 1}
-              className="rounded-brand border border-navy/10 bg-white p-8 shadow-card"
+              className="rounded-brand border border-navy/10 bg-paper p-8"
             >
               <div className="mb-4 flex items-center gap-3">
                 <div className="grid h-11 w-11 place-items-center rounded-xl border border-teal/20 bg-teal/10">
@@ -111,7 +111,7 @@ const About = () => {
             <Reveal
               key={card.tag}
               delay={i + 1}
-              className="group relative overflow-hidden rounded-brand border border-navy/10 bg-white p-7 shadow-card transition-all duration-500 hover:-translate-y-1.5 hover:border-teal/30"
+              className="group relative overflow-hidden rounded-brand border border-navy/10 bg-paper p-7 transition-all duration-500 hover:-translate-y-1.5 hover:border-teal/30"
             >
               <span className="absolute inset-x-0 top-0 h-[3px] bg-teal opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
               <div className="mb-5 grid h-12 w-12 place-items-center rounded-[14px] border border-teal/20 bg-teal/10">
@@ -162,7 +162,7 @@ const About = () => {
             <Reveal
               key={s.title}
               delay={i + 1}
-              className="rounded-brand border border-navy/10 bg-white p-7 shadow-card transition-transform duration-500 hover:-translate-y-1.5"
+              className="rounded-brand border border-navy/10 bg-paper p-7 transition-transform duration-500 hover:-translate-y-1.5"
             >
               <div className="mb-4 grid h-12 w-12 place-items-center rounded-[14px] border border-teal/20 bg-teal/10">
                 <s.icon className="h-6 w-6 text-teal" strokeWidth={1.7} />

@@ -5,7 +5,7 @@ const Footer = ({ onContact }) => {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="bg-navy py-14 text-white">
+    <footer className="mt-6 bg-navy py-14 text-white">
       <div className="mx-auto max-w-[1180px] px-7">
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
           <a href="#top" className="flex items-center gap-2">
