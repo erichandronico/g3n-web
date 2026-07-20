@@ -53,8 +53,6 @@ const services = [
 const About = () => {
   return (
     <section id="nosotros" className="relative overflow-hidden py-28 md:py-32">
-      <div className="pointer-events-none absolute left-1/2 top-0 h-[480px] w-[480px] -translate-x-1/2 rounded-full opacity-30 blur-[90px] [background:radial-gradient(circle,#1C6FA8,transparent_65%)]" />
-
       <div className="relative mx-auto max-w-[1180px] px-7">
         {/* Intro */}
         <Reveal as="div" className="kicker">
@@ -63,9 +61,9 @@ const About = () => {
         <Reveal
           as="h2"
           delay={1}
-          className="mt-4 max-w-[18ch] font-display text-[clamp(1.7rem,4vw,2.9rem)] font-bold leading-[1.08]"
+          className="mt-4 max-w-[18ch] font-display text-[clamp(1.7rem,4vw,2.9rem)] font-bold leading-[1.08] text-navy"
         >
-          Somos <span className="grad-text">G3N</span>, evolución tecnológica con propósito.
+          Somos <span className="text-teal">G3N</span>, evolución tecnológica con propósito.
         </Reveal>
         <Reveal as="p" delay={2} className="mt-5 max-w-[62ch] text-[1.12rem] text-text-dim">
           En G3N creamos soluciones de software que impulsan el crecimiento de nuestros clientes.
@@ -91,13 +89,13 @@ const About = () => {
             <Reveal
               key={b.title}
               delay={i + 1}
-              className="rounded-brand border border-white/[0.08] p-8 [background:linear-gradient(165deg,rgba(255,255,255,.045),rgba(255,255,255,.015))]"
+              className="rounded-brand border border-navy/10 bg-white p-8 shadow-card"
             >
               <div className="mb-4 flex items-center gap-3">
                 <div className="grid h-11 w-11 place-items-center rounded-xl border border-teal/20 bg-teal/10">
                   <b.icon className="h-5 w-5 text-teal" strokeWidth={1.9} />
                 </div>
-                <h3 className="font-display text-[1.35rem] font-bold">{b.title}</h3>
+                <h3 className="font-display text-[1.35rem] font-bold text-navy">{b.title}</h3>
               </div>
               <p className="text-[1rem] text-text-dim">{b.text}</p>
             </Reveal>
@@ -105,21 +103,21 @@ const About = () => {
         </div>
 
         {/* ADN de G3N */}
-        <Reveal as="h3" className="mt-20 font-display text-[1.6rem] font-bold">
-          El ADN de <span className="grad-text">G3N</span>
+        <Reveal as="h3" className="mt-20 font-display text-[1.6rem] font-bold text-navy">
+          El ADN de <span className="text-teal">G3N</span>
         </Reveal>
         <div className="mt-7 grid grid-cols-1 gap-6 md:grid-cols-3">
           {adn.map((card, i) => (
             <Reveal
               key={card.tag}
               delay={i + 1}
-              className="group relative overflow-hidden rounded-brand border border-white/[0.08] p-7 transition-all duration-500 hover:-translate-y-1.5 hover:border-teal/20 [background:linear-gradient(165deg,rgba(255,255,255,.045),rgba(255,255,255,.015))]"
+              className="group relative overflow-hidden rounded-brand border border-navy/10 bg-white p-7 shadow-card transition-all duration-500 hover:-translate-y-1.5 hover:border-teal/30"
             >
-              <span className="absolute inset-x-0 top-0 h-[3px] opacity-0 transition-opacity duration-500 group-hover:opacity-100 [background:var(--grad-bright)]" />
+              <span className="absolute inset-x-0 top-0 h-[3px] bg-teal opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
               <div className="mb-5 grid h-12 w-12 place-items-center rounded-[14px] border border-teal/20 bg-teal/10">
                 <card.icon className="h-6 w-6 text-teal" strokeWidth={1.7} />
               </div>
-              <div className="mb-3 font-display text-[1.15rem] font-bold grad-text">{card.tag}</div>
+              <div className="mb-3 font-display text-[1.15rem] font-bold text-teal">{card.tag}</div>
               {card.text && <p className="text-[0.96rem] text-text-dim">{card.text}</p>}
               {card.list && (
                 <ul className="grid gap-2.5">
@@ -137,9 +135,9 @@ const About = () => {
         {/* Filosofía */}
         <Reveal
           delay={1}
-          className="mt-16 rounded-brand border border-teal/15 p-8 md:p-10 [background:linear-gradient(160deg,rgba(28,111,168,.14),rgba(45,212,191,.05))]"
+          className="mt-16 rounded-brand border border-teal/20 bg-teal/[0.05] p-8 md:p-10"
         >
-          <h3 className="font-display text-[1.4rem] font-bold">
+          <h3 className="font-display text-[1.4rem] font-bold text-navy">
             Más que una marca, una filosofía
           </h3>
           <p className="mt-3 max-w-[70ch] text-[1.02rem] text-text-dim">
@@ -152,7 +150,7 @@ const About = () => {
         </Reveal>
 
         {/* Servicios — capacidades más allá de Easy Flow */}
-        <Reveal as="h3" className="mt-20 font-display text-[1.6rem] font-bold">
+        <Reveal as="h3" className="mt-20 font-display text-[1.6rem] font-bold text-navy">
           Más allá de Easy Flow
         </Reveal>
         <Reveal as="p" delay={1} className="mt-3 max-w-[54ch] text-[1.05rem] text-text-dim">
@@ -164,12 +162,12 @@ const About = () => {
             <Reveal
               key={s.title}
               delay={i + 1}
-              className="rounded-brand border border-white/[0.08] p-7 transition-transform duration-500 hover:-translate-y-1.5 [background:linear-gradient(165deg,rgba(255,255,255,.04),rgba(255,255,255,.015))]"
+              className="rounded-brand border border-navy/10 bg-white p-7 shadow-card transition-transform duration-500 hover:-translate-y-1.5"
             >
               <div className="mb-4 grid h-12 w-12 place-items-center rounded-[14px] border border-teal/20 bg-teal/10">
                 <s.icon className="h-6 w-6 text-teal" strokeWidth={1.7} />
               </div>
-              <h4 className="mb-2 font-display text-[1.15rem] font-semibold">{s.title}</h4>
+              <h4 className="mb-2 font-display text-[1.15rem] font-semibold text-navy">{s.title}</h4>
               <p className="text-[0.95rem] text-text-dim">{s.text}</p>
             </Reveal>
           ))}

@@ -16,10 +16,10 @@ const Wordmark = () => (
       alt=""
       className="h-6 w-auto transition-transform duration-500 ease-brand group-hover:scale-105"
     />
-    <span className="font-display text-2xl font-extrabold tracking-tight text-white">
-      G<span className="grad-text">3</span>N
+    <span className="font-display text-2xl font-extrabold tracking-tight text-navy">
+      G<span className="text-teal">3</span>N
     </span>
-    <span className="hidden sm:inline-block h-4 w-px bg-white/15" />
+    <span className="hidden sm:inline-block h-4 w-px bg-navy/15" />
     <span className="hidden sm:inline-block font-display text-[0.62rem] font-semibold uppercase tracking-[0.22em] text-text-dim">
       Software 2026
     </span>
@@ -41,7 +41,7 @@ const Navbar = ({ onContact }) => {
     <header
       className={`fixed inset-x-0 top-0 z-50 backdrop-blur-xl transition-all duration-500 ${
         solid
-          ? 'border-b border-teal/15 bg-ink-deep/75 py-3'
+          ? 'border-b border-navy/10 bg-white/80 py-3'
           : 'border-b border-transparent bg-transparent py-[18px]'
       }`}
     >
@@ -53,7 +53,7 @@ const Navbar = ({ onContact }) => {
             <a
               key={l.href}
               href={l.href}
-              className="font-display text-[0.92rem] font-medium text-text-dim transition-colors hover:text-teal-light"
+              className="font-display text-[0.92rem] font-medium text-text-dim transition-colors hover:text-teal"
             >
               {l.label}
             </a>
@@ -63,13 +63,13 @@ const Navbar = ({ onContact }) => {
         <div className="flex items-center gap-3">
           <button
             onClick={onContact}
-            className="hidden rounded-full bg-[linear-gradient(118deg,#2C7CB8_0%,#2DD4BF_60%,#6FF0DD_100%)] px-[22px] py-[11px] font-display text-[0.92rem] font-semibold text-ink-deep shadow-[0_10px_28px_-10px_rgba(45,212,191,.6)] transition-transform duration-300 hover:-translate-y-0.5 sm:inline-block"
+            className="hidden rounded-full bg-teal px-[22px] py-[11px] font-display text-[0.92rem] font-semibold text-white shadow-[0_10px_24px_-12px_rgba(13,148,136,.5)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-teal-dark sm:inline-block"
           >
             Solicita una demo
           </button>
           <button
             onClick={() => setOpen((v) => !v)}
-            className="text-white md:hidden"
+            className="text-navy md:hidden"
             aria-label="Menú"
           >
             {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -78,13 +78,13 @@ const Navbar = ({ onContact }) => {
       </nav>
 
       {open && (
-        <div className="mx-auto max-w-[1180px] space-y-1 px-7 pb-5 pt-2 md:hidden">
+        <div className="mx-auto max-w-[1180px] space-y-1 bg-white/95 px-7 pb-5 pt-2 md:hidden">
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
-              className="block rounded-xl px-3 py-2.5 font-display font-medium text-text-dim transition-colors hover:bg-white/5 hover:text-teal-light"
+              className="block rounded-xl px-3 py-2.5 font-display font-medium text-text-dim transition-colors hover:bg-navy/5 hover:text-teal"
             >
               {l.label}
             </a>
@@ -94,7 +94,7 @@ const Navbar = ({ onContact }) => {
               setOpen(false)
               onContact()
             }}
-            className="mt-2 block w-full rounded-full bg-[linear-gradient(118deg,#2C7CB8_0%,#2DD4BF_60%,#6FF0DD_100%)] px-5 py-3 text-center font-display font-semibold text-ink-deep"
+            className="mt-2 block w-full rounded-full bg-teal px-5 py-3 text-center font-display font-semibold text-white"
           >
             Solicita una demo
           </button>

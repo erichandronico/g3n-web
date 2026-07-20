@@ -29,17 +29,17 @@ const chips = [
 
 const Platform = () => {
   return (
-    <section className="bg-paper py-28 text-ink-text md:py-32">
+    <section className="bg-white py-28 text-ink-text md:py-32">
       <div className="mx-auto max-w-[1180px] px-7">
-        <Reveal as="div" className="kicker !text-blue">
+        <Reveal as="div" className="kicker">
           Tecnología que no te preocupa
         </Reveal>
         <Reveal
           as="h2"
           delay={1}
-          className="mt-4 font-display text-[clamp(1.7rem,4vw,2.9rem)] font-bold leading-[1.08]"
+          className="mt-4 font-display text-[clamp(1.7rem,4vw,2.9rem)] font-bold leading-[1.08] text-navy"
         >
-          Moderna, segura y <span className="grad-text-dark">lista para crecer contigo.</span>
+          Moderna, segura y <span className="text-teal">lista para crecer contigo.</span>
         </Reveal>
         <Reveal as="p" delay={2} className="mt-4 max-w-[56ch] text-[1.12rem] text-ink-text-dim">
           Easy Flow está construido sobre arquitectura cloud de última generación: segura, escalable
@@ -52,9 +52,9 @@ const Platform = () => {
             <Reveal
               key={f.title}
               delay={i + 1}
-              className="rounded-brand border border-ink-text/[0.07] bg-white p-8 shadow-[0_24px_50px_-34px_rgba(14,34,53,.28)] transition-transform duration-500 hover:-translate-y-1.5"
+              className="rounded-brand border border-navy/10 bg-paper p-8 shadow-[0_24px_50px_-34px_rgba(14,34,53,.18)] transition-transform duration-500 hover:-translate-y-1.5"
             >
-              <div className="mb-5 grid h-[50px] w-[50px] place-items-center rounded-[14px] [background:var(--grad)]">
+              <div className="mb-5 grid h-[50px] w-[50px] place-items-center rounded-[14px] bg-navy">
                 <f.icon className="h-6 w-6 text-white" strokeWidth={1.8} />
               </div>
               <h3 className="mb-2 font-display text-[1.22rem] font-bold text-ink-text">{f.title}</h3>
@@ -73,7 +73,7 @@ const Platform = () => {
             <Reveal
               key={c}
               delay={i}
-              className="flex items-center gap-2.5 rounded-full border border-ink-text/10 bg-white px-5 py-2.5 font-display text-[0.92rem] font-medium text-ink-text"
+              className="flex items-center gap-2.5 rounded-full border border-navy/10 bg-paper px-5 py-2.5 font-display text-[0.92rem] font-medium text-ink-text"
             >
               <Check className="h-4 w-4 text-teal" strokeWidth={2.4} />
               {c}

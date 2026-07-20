@@ -54,10 +54,7 @@ const modules = [
 
 const Modules = () => {
   return (
-    <section
-      id="modulos"
-      className="py-28 md:py-32 [background:linear-gradient(180deg,var(--ink)_0%,var(--ink-deep)_100%)]"
-    >
+    <section id="modulos" className="bg-white py-28 md:py-32">
       <div className="mx-auto max-w-[1180px] px-7">
         <Reveal as="div" className="kicker">
           Cuatro módulos. Un solo flujo.
@@ -65,9 +62,9 @@ const Modules = () => {
         <Reveal
           as="h2"
           delay={1}
-          className="mt-4 font-display text-[clamp(1.7rem,4vw,2.9rem)] font-bold leading-[1.08]"
+          className="mt-4 font-display text-[clamp(1.7rem,4vw,2.9rem)] font-bold leading-[1.08] text-navy"
         >
-          Todo tu negocio, <span className="grad-text">conectado.</span>
+          Todo tu negocio, <span className="text-teal">conectado.</span>
         </Reveal>
         <Reveal as="p" delay={2} className="mt-4 max-w-[54ch] text-[1.12rem] text-text-dim">
           Cada módulo es potente por sí solo —y juntos conversan sin que tengas que mover un dato a
@@ -79,16 +76,16 @@ const Modules = () => {
             <Reveal
               key={m.title}
               delay={(i % 2) + 1}
-              className="group relative overflow-hidden rounded-brand border border-white/[0.08] p-9 transition-all duration-500 hover:-translate-y-1.5 hover:border-teal/20 [background:linear-gradient(165deg,rgba(255,255,255,.045),rgba(255,255,255,.015))]"
+              className="group relative overflow-hidden rounded-brand border border-navy/10 bg-paper p-9 transition-all duration-500 hover:-translate-y-1.5 hover:border-teal/30 hover:shadow-card"
             >
-              <span className="absolute inset-x-0 top-0 h-[3px] opacity-0 transition-opacity duration-500 group-hover:opacity-100 [background:var(--grad-bright)]" />
-              <span className="absolute right-8 top-7 font-display text-[2.6rem] font-bold text-teal/[0.12]">
+              <span className="absolute inset-x-0 top-0 h-[3px] bg-teal opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+              <span className="absolute right-8 top-7 font-display text-[2.6rem] font-bold text-navy/[0.08]">
                 {m.num}
               </span>
               <div className="mb-6 grid h-14 w-14 place-items-center rounded-[15px] border border-teal/20 bg-teal/10">
                 <m.icon className="h-7 w-7 text-teal" strokeWidth={1.7} />
               </div>
-              <h3 className="mb-2.5 font-display text-[1.5rem] font-bold">{m.title}</h3>
+              <h3 className="mb-2.5 font-display text-[1.5rem] font-bold text-navy">{m.title}</h3>
               <p className="mb-5 text-[0.99rem] text-text-dim">{m.desc}</p>
               <ul className="grid gap-2.5">
                 {m.items.map((it) => (

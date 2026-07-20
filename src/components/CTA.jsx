@@ -3,16 +3,7 @@ import Reveal from './Reveal'
 
 const CTA = ({ onContact }) => {
   return (
-    <section
-      id="contacto"
-      className="relative overflow-hidden py-32 text-center"
-      style={{
-        background:
-          'radial-gradient(120% 120% at 50% 0, #15466b 0%, var(--ink) 55%, var(--ink-deep) 100%)',
-      }}
-    >
-      <div className="pointer-events-none absolute -right-32 -top-40 h-[560px] w-[560px] animate-float rounded-full opacity-[0.32] blur-[80px] [background:radial-gradient(circle,#2DD4BF,transparent_65%)]" />
-
+    <section id="contacto" className="relative overflow-hidden bg-white py-32 text-center">
       <div className="relative z-[2] mx-auto max-w-[1180px] px-7">
         <Reveal className="mb-7 inline-block">
           <img
@@ -20,15 +11,15 @@ const CTA = ({ onContact }) => {
             width={120}
             height={54}
             alt="Easy Flow"
-            className="mx-auto h-auto w-[110px] animate-iso-float drop-shadow-[0_14px_40px_rgba(45,212,191,.35)]"
+            className="mx-auto h-auto w-[110px] animate-iso-float drop-shadow-[0_12px_28px_rgba(14,34,53,.18)]"
           />
         </Reveal>
         <Reveal
           as="h2"
           delay={1}
-          className="mx-auto max-w-[16ch] font-display text-[clamp(2.2rem,5.5vw,4rem)] font-extrabold"
+          className="mx-auto max-w-[16ch] font-display text-[clamp(2.2rem,5.5vw,4rem)] font-extrabold text-navy"
         >
-          Deja que tu empresa <span className="grad-text">fluya.</span>
+          Deja que tu empresa <span className="text-teal">fluya.</span>
         </Reveal>
         <Reveal as="p" delay={2} className="mx-auto mt-6 max-w-[50ch] text-[1.15rem] text-text-dim">
           Te mostramos cómo Easy Flow ordena tus compras, inventario, ventas y contabilidad en un

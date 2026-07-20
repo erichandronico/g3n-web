@@ -119,8 +119,8 @@ const ContactModal = ({ open, onClose }) => {
   }
 
   const inputBase =
-    'w-full rounded-xl border bg-white/[0.04] px-4 py-3 text-text placeholder:text-text-dim/60 ' +
-    'outline-none transition focus:border-teal focus:bg-white/[0.06]'
+    'w-full rounded-xl border bg-paper px-4 py-3 text-text placeholder:text-text-dim/60 ' +
+    'outline-none transition focus:border-teal focus:bg-white'
 
   return (
     <div
@@ -132,32 +132,29 @@ const ContactModal = ({ open, onClose }) => {
       {/* Backdrop */}
       <div
         onClick={onClose}
-        className={`absolute inset-0 bg-ink-deep/80 backdrop-blur-md transition-opacity duration-300 ${
+        className={`absolute inset-0 bg-navy/40 backdrop-blur-md transition-opacity duration-300 ${
           shown ? 'opacity-100' : 'opacity-0'
         }`}
       />
 
       {/* Panel */}
       <div
-        className={`relative z-[1] w-full max-w-[480px] overflow-hidden rounded-brand border border-teal/15 bg-[linear-gradient(165deg,#0E2C45_0%,#081523_100%)] shadow-soft transition-all duration-300 ease-brand ${
+        className={`relative z-[1] w-full max-w-[480px] overflow-hidden rounded-brand border border-navy/10 bg-white shadow-soft transition-all duration-300 ease-brand ${
           shown ? 'translate-y-0 scale-100 opacity-100' : 'translate-y-4 scale-[0.96] opacity-0'
         }`}
       >
-        {/* Glow decorativo */}
-        <div className="pointer-events-none absolute -right-20 -top-24 h-64 w-64 rounded-full opacity-40 blur-[70px] [background:radial-gradient(circle,#2DD4BF,transparent_65%)]" />
-
         {/* Header */}
         <div className="relative flex items-start justify-between gap-4 px-7 pt-7">
           <div>
             <div className="kicker mb-2">Solicita una demo</div>
-            <h3 className="font-display text-2xl font-extrabold leading-tight">
-              Hablemos de tu <span className="grad-text">flujo</span>.
+            <h3 className="font-display text-2xl font-extrabold leading-tight text-navy">
+              Hablemos de tu <span className="text-teal">flujo</span>.
             </h3>
           </div>
           <button
             onClick={onClose}
             aria-label="Cerrar"
-            className="rounded-full p-2 text-text-dim transition hover:bg-white/5 hover:text-text"
+            className="rounded-full p-2 text-text-dim transition hover:bg-navy/5 hover:text-text"
           >
             <X className="h-5 w-5" />
           </button>
@@ -201,7 +198,7 @@ const ContactModal = ({ open, onClose }) => {
                   value={form.name}
                   onChange={(e) => setField('name', e.target.value)}
                   placeholder="Tu nombre"
-                  className={`${inputBase} border-white/10`}
+                  className={`${inputBase} border-navy/15`}
                 />
               </div>
 
@@ -216,9 +213,9 @@ const ContactModal = ({ open, onClose }) => {
                   onChange={(e) => setField('email', e.target.value)}
                   placeholder="tucorreo@empresa.cl"
                   aria-invalid={Boolean(errors.email)}
-                  className={`${inputBase} ${errors.email ? 'border-red-400/70' : 'border-white/10'}`}
+                  className={`${inputBase} ${errors.email ? 'border-red-400' : 'border-navy/15'}`}
                 />
-                {errors.email && <p className="mt-1.5 text-sm text-red-300">{errors.email}</p>}
+                {errors.email && <p className="mt-1.5 text-sm text-red-500">{errors.email}</p>}
               </div>
 
               {/* Teléfono */}
@@ -229,7 +226,7 @@ const ContactModal = ({ open, onClose }) => {
                   value={form.phone}
                   onChange={(e) => setField('phone', e.target.value)}
                   placeholder="+56 9 1234 5678"
-                  className={`${inputBase} border-white/10`}
+                  className={`${inputBase} border-navy/15`}
                 />
               </div>
 
@@ -249,8 +246,8 @@ const ContactModal = ({ open, onClose }) => {
                         aria-pressed={active}
                         className={`flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium transition duration-300 ease-brand ${
                           active
-                            ? 'border-teal bg-teal/15 text-teal-light'
-                            : 'border-white/10 text-text-dim hover:border-teal/40 hover:text-text'
+                            ? 'border-teal bg-teal/10 text-teal'
+                            : 'border-navy/15 text-text-dim hover:border-teal/40 hover:text-text'
                         }`}
                       >
                         <Icon className="h-4 w-4" />
@@ -263,7 +260,7 @@ const ContactModal = ({ open, onClose }) => {
             </div>
 
             {status === 'error' && (
-              <p className="mt-4 rounded-xl border border-red-400/30 bg-red-500/10 px-4 py-3 text-sm text-red-200">
+              <p className="mt-4 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-600">
                 {serverMsg}
               </p>
             )}
