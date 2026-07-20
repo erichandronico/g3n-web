@@ -16,8 +16,8 @@ const steps = [
 
 const Flexibility = () => {
   return (
-    <section className="bg-paper py-28 text-ink-text md:py-32">
-      <div className="mx-auto grid max-w-[1180px] grid-cols-1 items-center gap-12 px-7 md:gap-16 lg:grid-cols-[1.05fr_0.95fr]">
+    <section className="tile-wrap text-ink-text">
+      <div className="tile grid grid-cols-1 items-center gap-12 md:gap-16 lg:grid-cols-[1.05fr_0.95fr]">
         <div>
           <Reveal as="div" className="kicker">
             Hecho a la medida de tu empresa
@@ -48,12 +48,12 @@ const Flexibility = () => {
 
         <Reveal
           delay={2}
-          className="rounded-[26px] border border-navy/10 bg-white p-7 shadow-soft md:p-9"
+          className="rounded-[26px] border border-navy/10 bg-paper p-7 md:p-9"
         >
           <div className="grid gap-3.5">
             {steps.map((step, i) => (
               <div key={step.n}>
-                <div className="flex items-center gap-4 rounded-2xl border border-navy/[0.08] bg-paper px-4 py-4">
+                <div className="flex items-center gap-4 rounded-2xl border border-navy/[0.06] bg-white px-4 py-4 shadow-card">
                   <span className="grid h-[34px] w-[34px] flex-none place-items-center rounded-full bg-teal font-display text-[0.92rem] font-bold text-white">
                     {step.n}
                   </span>

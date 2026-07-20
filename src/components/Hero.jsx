@@ -30,7 +30,7 @@ const Hero = ({ onContact }) => {
       className="relative flex min-h-screen items-center overflow-hidden"
       style={{
         background:
-          'radial-gradient(120% 90% at 80% -10%, rgba(13,148,136,.07) 0%, #ffffff 48%, var(--paper) 100%)',
+          'radial-gradient(120% 90% at 80% -10%, rgba(13,148,136,.07) 0%, #ffffff 48%, var(--paper-2) 100%)',
       }}
     >
       {/* Líneas de flujo animadas */}
