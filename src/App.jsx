@@ -1,14 +1,15 @@
 import { useState } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
-import WhatIs from './components/easyflow/WhatIs'
-import FlowGuides from './components/easyflow/FlowGuides'
-import TaglineStrip from './components/easyflow/TaglineStrip'
+import IconStrip from './components/IconStrip'
+import MeetEasyFlow from './components/MeetEasyFlow'
+import FeatureCards from './components/FeatureCards'
+import BlueBand from './components/BlueBand'
 import Modules from './components/easyflow/Modules'
-import Flexibility from './components/easyflow/Flexibility'
-import Platform from './components/easyflow/Platform'
-import About from './components/About'
-import CTA from './components/CTA'
+import PlatformFeatures from './components/PlatformFeatures'
+import StatsBand from './components/StatsBand'
+import AboutDetail from './components/AboutDetail'
+import CTABand from './components/CTABand'
 import Footer from './components/Footer'
 import ContactModal from './components/ContactModal'
 
@@ -18,17 +19,18 @@ function App() {
   const closeContact = () => setContactOpen(false)
 
   return (
-    <div className="bg-paper-2 font-sans text-text antialiased">
+    <div className="bg-white font-sans text-text antialiased">
       <Navbar onContact={openContact} />
       <Hero onContact={openContact} />
-      <WhatIs />
-      <FlowGuides />
-      <TaglineStrip />
+      <IconStrip />
+      <MeetEasyFlow onContact={openContact} />
+      <FeatureCards />
+      <BlueBand />
       <Modules />
-      <Flexibility />
-      <Platform />
-      <About />
-      <CTA onContact={openContact} />
+      <PlatformFeatures />
+      <StatsBand onContact={openContact} />
+      <AboutDetail />
+      <CTABand onContact={openContact} />
       <Footer onContact={openContact} />
       <ContactModal open={contactOpen} onClose={closeContact} />
     </div>

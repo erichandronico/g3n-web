@@ -7,21 +7,17 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Tokens de marca Easy Flow / G3N — tema claro
-        ink: '#0A1C2E',
-        'ink-deep': '#081523',
+        // Tokens de marca G3N — estilo corporativo
+        ink: '#1B2126',
         navy: '#16314F',
         blue: '#1C6FA8',
+        'blue-dark': '#155A88',
+        'blue-soft': '#82BEE8',
         teal: '#0D9488',
-        'teal-dark': '#0B7A6E',
-        'teal-soft': '#5EEAD4',
-        paper: '#F6FAFB',
-        'paper-2': '#ECF3F5',
-        // Texto sobre fondo claro (tokens usados sobre bandas navy van con white/*)
-        text: '#0E2235',
-        'text-dim': '#5A7488',
-        'ink-text': '#0E2235',
-        'ink-text-dim': '#5A7488',
+        gray: '#F0F2F4',
+        'gray-2': '#E7EAED',
+        text: '#1F2933',
+        'text-dim': '#5C6873',
       },
       fontFamily: {
         display: ['Outfit', 'system-ui', 'sans-serif'],

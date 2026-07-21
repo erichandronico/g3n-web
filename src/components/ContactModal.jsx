@@ -119,8 +119,8 @@ const ContactModal = ({ open, onClose }) => {
   }
 
   const inputBase =
-    'w-full rounded-xl border bg-paper px-4 py-3 text-text placeholder:text-text-dim/60 ' +
-    'outline-none transition focus:border-teal focus:bg-white'
+    'w-full rounded-[4px] border bg-gray px-4 py-3 text-text placeholder:text-text-dim/60 ' +
+    'outline-none transition focus:border-blue focus:bg-white'
 
   return (
     <div
@@ -139,7 +139,7 @@ const ContactModal = ({ open, onClose }) => {
 
       {/* Panel */}
       <div
-        className={`relative z-[1] w-full max-w-[480px] overflow-hidden rounded-brand border border-navy/10 bg-white shadow-soft transition-all duration-300 ease-brand ${
+        className={`relative z-[1] w-full max-w-[480px] overflow-hidden rounded-[6px] border border-gray-2 bg-white shadow-soft transition-all duration-300 ease-brand ${
           shown ? 'translate-y-0 scale-100 opacity-100' : 'translate-y-4 scale-[0.96] opacity-0'
         }`}
       >
@@ -148,7 +148,7 @@ const ContactModal = ({ open, onClose }) => {
           <div>
             <div className="kicker mb-2">Solicita una demo</div>
             <h3 className="font-display text-2xl font-extrabold leading-tight text-navy">
-              Hablemos de tu <span className="text-teal">flujo</span>.
+              Hablemos de tu <span className="text-blue">flujo</span>.
             </h3>
           </div>
           <button
@@ -162,8 +162,8 @@ const ContactModal = ({ open, onClose }) => {
 
         {status === 'success' ? (
           <div className="relative px-7 pb-8 pt-6 text-center">
-            <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-teal/10">
-              <CheckCircle2 className="h-9 w-9 text-teal" />
+            <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-blue/10">
+              <CheckCircle2 className="h-9 w-9 text-blue" />
             </div>
             <p className="mx-auto max-w-[34ch] text-text-dim">{serverMsg}</p>
             <button onClick={onClose} className="btn btn-primary mt-7 w-full justify-center">
@@ -198,14 +198,14 @@ const ContactModal = ({ open, onClose }) => {
                   value={form.name}
                   onChange={(e) => setField('name', e.target.value)}
                   placeholder="Tu nombre"
-                  className={`${inputBase} border-navy/15`}
+                  className={`${inputBase} border-gray-2`}
                 />
               </div>
 
               {/* Correo (obligatorio) */}
               <div>
                 <label className="mb-1.5 block text-sm font-medium text-text">
-                  Correo <span className="text-teal">*</span>
+                  Correo <span className="text-blue">*</span>
                 </label>
                 <input
                   type="email"
@@ -213,7 +213,7 @@ const ContactModal = ({ open, onClose }) => {
                   onChange={(e) => setField('email', e.target.value)}
                   placeholder="tucorreo@empresa.cl"
                   aria-invalid={Boolean(errors.email)}
-                  className={`${inputBase} ${errors.email ? 'border-red-400' : 'border-navy/15'}`}
+                  className={`${inputBase} ${errors.email ? 'border-red-400' : 'border-gray-2'}`}
                 />
                 {errors.email && <p className="mt-1.5 text-sm text-red-500">{errors.email}</p>}
               </div>
@@ -226,7 +226,7 @@ const ContactModal = ({ open, onClose }) => {
                   value={form.phone}
                   onChange={(e) => setField('phone', e.target.value)}
                   placeholder="+56 9 1234 5678"
-                  className={`${inputBase} border-navy/15`}
+                  className={`${inputBase} border-gray-2`}
                 />
               </div>
 
@@ -244,10 +244,10 @@ const ContactModal = ({ open, onClose }) => {
                         key={value}
                         onClick={() => toggleChannel(value)}
                         aria-pressed={active}
-                        className={`flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium transition duration-300 ease-brand ${
+                        className={`flex items-center gap-2 rounded-[4px] border px-4 py-2 text-sm font-medium transition duration-300 ease-brand ${
                           active
-                            ? 'border-teal bg-teal/10 text-teal'
-                            : 'border-navy/15 text-text-dim hover:border-teal/40 hover:text-text'
+                            ? 'border-blue bg-blue/10 text-blue'
+                            : 'border-gray-2 text-text-dim hover:border-blue/40 hover:text-text'
                         }`}
                       >
                         <Icon className="h-4 w-4" />

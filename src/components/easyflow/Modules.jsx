@@ -6,7 +6,7 @@ const modules = [
     num: '01',
     icon: ShoppingCart,
     title: 'Compras',
-    desc: 'El corazón de Easy Flow: solicitudes, cotizaciones, aprobaciones y órdenes de compra en un flujo ordenado y automático.',
+    desc: 'El corazón de EasyFlow: solicitudes, cotizaciones, aprobaciones y órdenes de compra en un flujo ordenado y automático.',
     items: [
       'Solicitudes de compra con flujo de aprobación por niveles',
       'Cotizaciones y comparación de proveedores',
@@ -54,43 +54,42 @@ const modules = [
 
 const Modules = () => {
   return (
-    <section id="modulos" className="tile-wrap">
-      <div className="tile tile-dark">
-        <Reveal as="div" className="kicker !text-teal-soft">
-          Cuatro módulos. Un solo flujo.
-        </Reveal>
-        <Reveal
-          as="h2"
-          delay={1}
-          className="mt-4 font-display text-[clamp(1.7rem,4vw,2.9rem)] font-bold leading-[1.08] text-white"
-        >
-          Todo tu negocio, <span className="text-teal-soft">conectado.</span>
-        </Reveal>
-        <Reveal as="p" delay={2} className="mt-4 max-w-[54ch] text-[1.12rem] text-white/70">
-          Cada módulo es potente por sí solo —y juntos conversan sin que tengas que mover un dato a
-          mano.
-        </Reveal>
+    <section id="modulos" className="bg-white py-24 md:py-28">
+      <div className="mx-auto max-w-[1180px] px-7">
+        <div className="mb-14 text-center">
+          <Reveal as="div" className="kicker mb-4">
+            Cuatro módulos. Un solo flujo.
+          </Reveal>
+          <Reveal as="h2" delay={1} className="sec-title">
+            Todo tu negocio, <span className="text-blue">conectado.</span>
+          </Reveal>
+          <Reveal as="p" delay={2} className="mx-auto mt-4 max-w-[54ch] text-[0.95rem] text-text-dim">
+            Cada módulo es potente por sí solo —y juntos conversan sin que tengas que mover un dato
+            a mano.
+          </Reveal>
+        </div>
 
-        <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           {modules.map((m, i) => (
             <Reveal
               key={m.title}
               delay={(i % 2) + 1}
-              className="group relative overflow-hidden rounded-brand border border-white/10 bg-white/[0.06] p-9 transition-all duration-500 hover:-translate-y-1.5 hover:border-teal-soft/30"
+              className="relative border border-gray-2 p-8 transition-colors duration-300 hover:border-blue/40"
             >
-              <span className="absolute inset-x-0 top-0 h-[3px] bg-teal-soft opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-              <span className="absolute right-8 top-7 font-display text-[2.6rem] font-bold text-white/[0.08]">
+              <span className="absolute right-7 top-6 font-display text-[2.2rem] font-extrabold text-gray-2">
                 {m.num}
               </span>
-              <div className="mb-6 grid h-14 w-14 place-items-center rounded-[15px] border border-teal-soft/25 bg-teal-soft/10">
-                <m.icon className="h-7 w-7 text-teal-soft" strokeWidth={1.7} />
+              <div className="mb-5 grid h-[52px] w-[52px] place-items-center rounded-full border-[1.5px] border-blue text-blue">
+                <m.icon className="h-6 w-6" strokeWidth={1.7} />
               </div>
-              <h3 className="mb-2.5 font-display text-[1.5rem] font-bold text-white">{m.title}</h3>
-              <p className="mb-5 text-[0.99rem] text-white/65">{m.desc}</p>
+              <h3 className="mb-3 font-display text-[0.82rem] font-extrabold uppercase tracking-[0.16em] text-ink">
+                {m.title}
+              </h3>
+              <p className="mb-5 text-[0.88rem] text-text-dim">{m.desc}</p>
               <ul className="grid gap-2.5">
                 {m.items.map((it) => (
-                  <li key={it} className="flex items-start gap-2.5 text-[0.92rem] text-white/85">
-                    <span className="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-teal-soft" />
+                  <li key={it} className="flex items-start gap-3 text-[0.84rem] text-text">
+                    <span className="mt-[7px] h-1.5 w-1.5 flex-none rotate-45 bg-blue" />
                     {it}
                   </li>
                 ))}

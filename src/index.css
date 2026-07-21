@@ -3,23 +3,19 @@
 @tailwind utilities;
 
 /* ============================================================
-   G3N · Easy Flow — Sistema de diseño 2026 (tema claro)
-   Tokens de marca: navy #16314F · azul #1C6FA8 · teal #0D9488
-   Sin degradados ni glows: acentos sólidos sobre fondo claro.
+   G3N · EasyFlow — Diseño corporativo 2026
+   Acento: azul #1C6FA8 · overlay navy sobre fotografía
+   Titulares uppercase con tracking, botones rectangulares.
    ============================================================ */
 
 :root {
-  --ink: #0a1c2e;
   --navy: #16314f;
+  --ink: #1b2126;
   --blue: #1c6fa8;
-  --teal: #0d9488;
-  --teal-dark: #0b7a6e;
-  --teal-soft: #5eead4;
-  --paper: #f6fafb;
-  --paper-2: #ecf3f5;
-  --line: rgba(22, 49, 79, 0.1);
-  --text: #0e2235;
-  --text-dim: #5a7488;
+  --blue-dark: #155a88;
+  --gray: #f0f2f4;
+  --text: #1f2933;
+  --text-dim: #5c6873;
   --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
@@ -29,9 +25,9 @@
   }
   body {
     font-family: 'Figtree', system-ui, sans-serif;
-    background: var(--paper-2);
+    background: #fff;
     color: var(--text);
-    line-height: 1.6;
+    line-height: 1.65;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
   }
@@ -40,134 +36,87 @@
   h3,
   h4 {
     font-family: 'Outfit', sans-serif;
-    letter-spacing: -0.02em;
-    line-height: 1.05;
+    line-height: 1.15;
     font-weight: 700;
   }
   ::selection {
-    background: var(--teal);
+    background: var(--blue);
     color: #fff;
   }
 }
 
 @layer components {
-  /* ----- Eyebrow / kicker ----- */
-  .eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 9px;
-    font-family: 'Outfit', sans-serif;
-    font-weight: 600;
-    font-size: 0.78rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--teal-dark);
-    border: 1px solid rgba(13, 148, 136, 0.25);
-    background: rgba(13, 148, 136, 0.06);
-    padding: 8px 16px;
-    border-radius: 100px;
-  }
-  .eyebrow .dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: var(--teal);
-  }
+  /* ----- Kicker corporativo ----- */
   .kicker {
     font-family: 'Outfit', sans-serif;
     font-weight: 600;
-    font-size: 0.82rem;
-    letter-spacing: 0.16em;
+    font-size: 0.72rem;
+    letter-spacing: 0.3em;
     text-transform: uppercase;
-    color: var(--teal);
+    color: var(--blue);
   }
 
-  /* ----- Botones ----- */
+  /* ----- Título de sección ----- */
+  .sec-title {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 800;
+    font-size: clamp(1.3rem, 2.6vw, 1.7rem);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+
+  /* ----- Botones rectangulares ----- */
   .btn {
     font-family: 'Outfit', sans-serif;
-    font-weight: 600;
-    font-size: 1rem;
-    border-radius: 100px;
-    padding: 15px 30px;
+    font-weight: 700;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    border-radius: 3px;
+    padding: 14px 30px;
     text-decoration: none;
     display: inline-flex;
     align-items: center;
     gap: 10px;
     cursor: pointer;
     transition:
-      transform 0.3s var(--ease),
-      box-shadow 0.3s var(--ease),
       background 0.3s var(--ease),
       border-color 0.3s var(--ease),
-      color 0.3s var(--ease);
+      color 0.3s var(--ease),
+      transform 0.3s var(--ease);
   }
   .btn-primary {
-    background: var(--teal);
+    background: var(--blue);
     color: #fff;
-    box-shadow: 0 12px 28px -14px rgba(13, 148, 136, 0.55);
   }
   .btn-primary:hover {
-    background: var(--teal-dark);
-    transform: translateY(-3px);
-    box-shadow: 0 18px 36px -14px rgba(13, 148, 136, 0.6);
+    background: var(--blue-dark);
+    transform: translateY(-2px);
   }
-  .btn-ghost {
-    color: var(--navy);
-    border: 1px solid rgba(22, 49, 79, 0.25);
-  }
-  .btn-ghost:hover {
-    border-color: var(--teal);
-    color: var(--teal-dark);
-    transform: translateY(-3px);
-  }
-  /* Botón para secciones navy: acento claro sólido */
-  .btn-on-dark {
-    background: var(--teal-soft);
-    color: var(--navy);
-    box-shadow: 0 12px 28px -14px rgba(0, 0, 0, 0.45);
-  }
-  .btn-on-dark:hover {
-    background: #fff;
-    transform: translateY(-3px);
-  }
-
-  /* ----- Tiles estilo Apple: paneles redondeados apilados ----- */
-  .tile-wrap {
-    padding: 20px 16px 0;
-  }
-  @media (min-width: 640px) {
-    .tile-wrap {
-      padding: 24px 24px 0;
-    }
-  }
-  .tile {
-    margin-inline: auto;
-    max-width: 1320px;
-    border-radius: 28px;
-    background: #fff;
-    padding: 88px 28px;
-  }
-  @media (min-width: 768px) {
-    .tile {
-      border-radius: 40px;
-      padding: 110px 56px;
-    }
-  }
-  .tile-dark {
-    background: var(--navy);
+  .btn-outline {
+    border: 1px solid rgba(255, 255, 255, 0.6);
     color: #fff;
   }
-
-  /* ----- Líneas de flujo del hero ----- */
-  .fline {
-    stroke-dasharray: 6 14;
-    animation: dash 9s linear infinite;
-    animation-delay: var(--o, 0s);
+  .btn-outline:hover {
+    border-color: #fff;
+    background: rgba(255, 255, 255, 0.08);
   }
 }
 
 @layer utilities {
-  /* ----- Reveal on scroll (estilo Apple) ----- */
+  /* ----- Conectores animados del panel de workflow ----- */
+  .flow-line {
+    stroke-dasharray: 5 9;
+    animation: flowdash 3.5s linear infinite;
+  }
+  @keyframes flowdash {
+    to {
+      stroke-dashoffset: -140;
+    }
+  }
+
+  /* ----- Reveal on scroll ----- */
   .reveal {
     opacity: 0;
     transform: translateY(34px);
@@ -187,10 +136,7 @@
     transform: none !important;
     transition: none;
   }
-  .fline,
-  .animate-iso-float,
-  .animate-cue,
-  .animate-dash {
+  .flow-line {
     animation: none !important;
   }
 }
